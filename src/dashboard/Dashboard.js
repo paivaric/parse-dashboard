@@ -53,6 +53,9 @@ import { setBasePath }    from 'lib/AJAX';
 import Header             from 'components/back4App/Header/Header.react';
 import Sidebar            from 'components/back4App/Sidebar/Sidebar.react';
 import ServerSettings     from 'dashboard/ServerSettings/ServerSettings.react';
+import 'whatwg-fetch';
+
+import subscribeTo        from 'lib/subscribeTo';
 
 import {
   Router,
@@ -198,8 +201,12 @@ class Dashboard extends React.Component {
       });
       return Parse.Promise.when(appInfoPromises);
     }).then(function(resolvedApps) {
-      if(resolvedApps && resolvedApps.length) {
+      if(resolvedApps && Array.isArray(resolvedApps)) {
         resolvedApps.forEach(app => {
+          AppsManager.addApp(app);
+        });
+      } else {
+        Array.prototype.slice.call(arguments).forEach(app => {
           AppsManager.addApp(app);
         });
       }
@@ -209,7 +216,7 @@ class Dashboard extends React.Component {
         configLoadingError: error,
         configLoadingState: AsyncStatus.FAILED
       });
-    });
+    })
   }
 
   render() {
