@@ -45,7 +45,7 @@ export default class Header extends React.Component {
     .then(response => response.json())
     .then(apps => {
       let amountAppsWithExpiredPlans = apps.reduce((accumulator, currentValue, currentIndex, array) => {
-        return accumulator + ( currentValue.planCloudColor === 'red' ? 1 : 0 );
+        return accumulator + (currentValue.planCloudColor === 'red' || currentValue.status === 'BLOCKED'  ? 1 : 0);
       }, 0);
       this.setState({
         amountAppsWithExpiredPlans
