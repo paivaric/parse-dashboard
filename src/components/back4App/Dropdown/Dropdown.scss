@@ -18,13 +18,16 @@
       top: -15px;
       left: 28px;
     }
-
-    .icon-caret {
-      
+    
+    .item { 
+      &:hover {
+        background-color: transparent;
+        color: $light-blue; 
+      }
     }
   }
 
-  &:hover .dropdown-menu {
+  &:hover .menu {
     display: block;
     margin-top: 0px;
   }

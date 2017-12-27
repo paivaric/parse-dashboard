@@ -7,9 +7,10 @@ const headerNavData = {
     {label: 'Blog', url: 'http://blog.back4app.com/'}
   ],
   dropdownItems: [
-    {label: 'Account Keys', url:'https://dashboard.back4app.com/classic#/wizard/account-key'},
-    {label: 'Edit Email', url:'https://dashboard.back4app.com/email/change'},
-    {label: 'Edit Password', url:'https://dashboard.back4app.com/password/change'}
+    {label: 'Account Keys', url: 'https://dashboard.back4app.com/classic#/wizard/account-key'},
+    {label: 'Edit Password', url: 'https://dashboard.back4app.com/password/change'},
+    {label: 'Edit Email', url: 'https://dashboard.back4app.com/email/change'},
+    {label: 'Sign Out', url: 'https://dashboard.back4app.com/logout'},
   ]
 }
 
