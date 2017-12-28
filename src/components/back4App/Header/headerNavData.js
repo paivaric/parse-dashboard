@@ -16,7 +16,9 @@ const headerNavData = {
 
 headerNavData.sidebarItems = [
   ...headerNavData.items,
-  ...headerNavData.dropdownItems,
+  headerNavData.dropdownItems[0],
+  headerNavData.dropdownItems[1],
+  headerNavData.dropdownItems[2],
 ]
 
 export default headerNavData;
