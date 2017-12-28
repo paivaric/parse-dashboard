@@ -288,6 +288,8 @@ class Dashboard extends React.Component {
             <Route path='slow_queries' component={SlowQueries} />
           </Route>
 
+          <Route path='server-settings' component={ServerSettings} />
+
           <Redirect from='settings' to='/apps/:appId/settings/general' />
           <Route path='settings' component={SettingsData}>
             <Route path='general' component={GeneralSettings} />
